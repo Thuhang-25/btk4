@@ -1,0 +1,81 @@
+/* --- Kiểu dáng cơ bản (Cấu hình chung) --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #d3d3d3; /* Nền màu xám nhạt giống hình mẫu */
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+header h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+}
+
+/* --- Khối giao diện chính --- */
+.container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Giao diện Mobile mặc định: Chiếm 100% chiều rộng */
+div.card {
+  width: 100%;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 20px;
+  vertical-align: top;
+}
+
+/* Tạo khối màu sắc bo tròn góc và viền tím giống ảnh */
+.color-box {
+  width: 100%;
+  height: 200px;
+  border-radius: 25px;
+  border: 5px solid #6a0dad; /* Viền màu tím */
+}
+
+/* Các màu cụ thể */
+.red .color-box { background-color: #ff0000; }
+.orange .color-box { background-color: #ff7f00; }
+.yellow .color-box { background-color: #ffff00; }
+.green .color-box { background-color: #00ff00; }
+
+.card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* =================================================== */
+/*             YÊU CẦU BÀI TẬP (MEDIA QUERIES)          */
+/* =================================================== */
+
+/* Query #1: Máy tính bảng (Tablet View - từ 772px trở lên) */
+@media screen and (min-width: 772px) {
+  div.card {
+    width: 45vw;             /* 45% chiều rộng viewport */
+    display: inline-block;   /* Xếp các thẻ div nằm cạnh nhau */
+    margin: 10px 1.5%;
+  }
+
+  .color-box {
+    max-height: 30vh;        /* Chiều cao tối đa 30% viewport height */
+  }
+}
+
+/* Query #2: Màn hình lớn (Large Screen View - từ 998px trở lên) */
+@media screen and (min-width: 998px) {
+  div.card {
+    width: 30vw;             /* Đổi độ rộng div thành 30% viewport width */
+  }
+}
